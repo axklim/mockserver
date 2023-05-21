@@ -1,4 +1,5 @@
 const http = require('http');
+const config = require('./config.js');
 
 const hostname = '127.0.0.1';
 const port = 7070;
@@ -31,7 +32,7 @@ const resp = (res, data) => {
 
     if (url === '/oauth/authorization' && method === 'GET') {
         const response = {
-            client_id: 'adf',
+            client_id: config.oauthAuthorizationClientId,
         }
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
